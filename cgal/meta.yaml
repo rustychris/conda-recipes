@@ -1,0 +1,23 @@
+package: 
+  name: CGAL
+  version: 4.3.0
+
+source:
+   fn: CGAL-4.3.tar.gz
+   url: https://gforge.inria.fr/frs/download.php/32994/CGAL-4.3.tar.gz
+
+about:
+  home: http://www.cgal.org/
+  license: GPL/LGPL
+  summary: robust C++ implementation of geometric algorithms
+
+# needs boost - one candidate is
+# conda install -c https://conda.binstar.org/zwelch boost
+# which means zwelch has to be in channels
+
+requirements:
+  build:
+   - boost
+  run:
+   - boost
+

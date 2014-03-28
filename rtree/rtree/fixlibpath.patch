@@ -1,0 +1,16 @@
+diff -rupN Rtree-0.7.0/rtree/core.py Rtree-0.7.0-new/rtree/core.py
+--- rtree/core.py	2014-03-27 23:10:04.505117859 +0300
++++ rtree/core.py	2014-03-27 23:35:06.353956561 +0300
+@@ -82,7 +82,11 @@ elif os.name == 'posix':
+         free = ctypes.CDLL(find_library('libc')).free
+     else:
+         free = ctypes.CDLL(find_library('libc.so.6')).free
+-    rt = ctypes.CDLL(lib_name)
++    try:
++        rt = ctypes.CDLL(lib_name)
++    except OSError:
++        print "Trying local lib dir"
++        rt = ctypes.CDLL(os.path.join(sys.prefix,'lib',lib_name))
+ else:
+     raise RTreeError('Unsupported OS "%s"' % os.name)
+ 

@@ -1,0 +1,11 @@
+package:
+  name: patch      # lower case name of package, may contain '-' but no spaces
+  version: "2.7.1"    # source version
+
+source:
+   fn: patch-2.7.1.tar.gz 
+   url: http://ftp.gnu.org/gnu/patch/patch-2.7.1.tar.gz
+about:
+  home: http://savannah.gnu.org/projects/patch/
+  license: GPL
+  summary: GNU patch

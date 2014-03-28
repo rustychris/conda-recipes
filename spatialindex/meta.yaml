@@ -1,0 +1,13 @@
+package:
+  name: libspatialindex       # lower case name of package, may contain '-' but no spaces
+  version: "1.8.0"    # source version
+
+source:
+   # git then requires autoconf - easier to grab tarball
+   #git_url: https://github.com/libspatialindex/libspatialindex.git
+   fn: spatialindex-src-1.8.1.tar.gz
+   url: http://download.osgeo.org/libspatialindex/spatialindex-src-1.8.1.tar.gz
+about:
+  home: https://github.com/libspatialindex/libspatialindex
+  license: MIT
+  summary: C++ implementation of several spatial index algorithms
