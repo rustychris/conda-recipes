@@ -1,5 +1,5 @@
 package: 
-  name: CGAL
+  name: cgal
   version: 4.3.0
 
 source:
@@ -16,8 +16,17 @@ about:
 # which means zwelch has to be in channels
 
 requirements:
+  # it doesn't really require python, but maybe that will fix
+  # the missing bin directory
   build:
    - boost
+   - python
+   - cmake 2.8.9
+   - mpfr
+   - gmp
   run:
    - boost
+   - gmp
+   - mpfr
+
 

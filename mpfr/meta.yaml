@@ -1,0 +1,20 @@
+package:
+  name: mpfr      # lower case name of package, may contain '-' but no spaces
+  version: "3.1.2"    # source version
+
+source:
+   fn: mpfr-3.1.2.tar.gz
+   url: http://www.mpfr.org/mpfr-current/mpfr-3.1.2.tar.gz
+about:
+  home: http://www.mpfr.org/
+  license: GPL
+  summary: GNU mpfr
+
+requirements:
+  # python is a fake requirement, to workaround a missing bin directory
+  build:
+    - gmp
+    - python
+  run:
+    - gmp
+

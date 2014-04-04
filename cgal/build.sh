@@ -1,4 +1,5 @@
 #!/bin/bash
 
-cmake .
+cmake -DGMP_LIBRARIES=$SYS_PREFIX/lib -DGMP_INCLUDE_DIR=$SYS_PREFIX/include -DCMAKE_INSTALL_PREFIX=$PREFIX '-DCMAKE_INSTALL_RPATH=$ORIGIN/../lib' .
 make
+make install

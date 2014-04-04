@@ -1,0 +1,31 @@
+package:
+  name: python-cgal-bindings       # lower case name of package, may contain '-' but no spaces
+  version: "0.1"    # source version
+
+source:
+   git_url: https://RustyChris@code.google.com/r/rustychris-apollonius/ 
+
+   patches:
+     - link_to_gmp.patch
+
+about:
+  home: https://code.google.com/p/cgal-bindings/
+  license: Boost Software License
+  summary: python bindings for CGAL 
+
+requirements:
+  build:
+   - cgal
+   - python
+   - swig
+   - mpfr
+   - gmp
+  run:
+   - cgal
+   - python
+   - mpfr
+   - gmp
+
+# test:
+#   imports:
+#     CGAL.CGAL_Triangulation_2
