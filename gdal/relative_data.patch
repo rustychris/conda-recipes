@@ -1,0 +1,14 @@
+--- swig/python/osgeo/__init__.py	2013-08-26 16:01:11.000000000 -0400
++++ swig/python/osgeo/__init__.py	2014-04-08 22:13:24.196394439 -0400
+@@ -1,5 +1,11 @@
+ # __init__ for osgeo package.
+ 
++# relative location for data files:
++import os
++import sys
++
++os.environ['GDAL_DATA']=os.path.join(sys.prefix,'share','gdal')
++
+ # making the osgeo package version the same as the gdal version:
+ from sys import version_info
+ if version_info >= (2,6,0):
