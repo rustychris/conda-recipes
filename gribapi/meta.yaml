@@ -1,0 +1,24 @@
+package:
+  name: gribapi      # lower case name of package, may contain '-' but no spaces
+  version: "1.12.0"    # source version
+
+source:
+   url: https://software.ecmwf.int/wiki/download/attachments/3473437/grib_api-1.12.0.tar.gz?api=v2
+   fn: grib_api-1.12.0.tar.gz
+
+about:
+  home: https://software.ecmwf.int/wiki/display/GRIB/Home
+  license: Apache License v2.0
+  summary: python bindings for GRIB
+
+requirements:
+  build:
+   - python
+   - libjasper
+   - numpy
+   - swig
+  run:
+   - python
+   - numpy
+   - libjasper
+

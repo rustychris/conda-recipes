@@ -1,0 +1,13 @@
+package:
+  name: libjasper 
+  version: "1.900.1"    # source version
+
+source:
+   url: http://www.ece.uvic.ca/~frodo/jasper/software/jasper-1.900.1.zip
+   fn: jasper-1.900.1.zip
+
+about:
+  home: http://www.ece.uvic.ca/~frodo/jasper/
+  license: MIT-like open source license
+  summary: JPEG-2000 reference implementation 
+
