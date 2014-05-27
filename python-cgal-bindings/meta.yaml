@@ -3,7 +3,7 @@ package:
   version: "0.1"    # source version
 
 source:
-   git_url: https://RustyChris@code.google.com/r/rustychris-apollonius/ 
+   git_url: https://code.google.com/r/rustychris-apollonius/ 
 
    patches:
      - link_to_gmp.patch
@@ -12,6 +12,9 @@ about:
   home: https://code.google.com/p/cgal-bindings/
   license: Boost Software License
   summary: python bindings for CGAL 
+build:
+  number: 2
+  string: 2wakari
 
 requirements:
   build:
@@ -20,6 +23,8 @@ requirements:
    - swig
    - mpfr
    - gmp
+   - patch
+   - cmake
   run:
    - cgal
    - python

@@ -10,6 +10,9 @@ about:
   home: http://www.cgal.org/
   license: GPL/LGPL
   summary: robust C++ implementation of geometric algorithms
+build:
+  number: 2
+  string: 2wakari
 
 # needs boost - one candidate is
 # conda install -c https://conda.binstar.org/zwelch boost
