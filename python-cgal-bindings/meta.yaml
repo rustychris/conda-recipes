@@ -13,8 +13,8 @@ about:
   license: Boost Software License
   summary: python bindings for CGAL 
 build:
-  number: 2
-  string: 2wakari
+  number: 3
+  string: 3
 
 requirements:
   build:
