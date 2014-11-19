@@ -1,20 +1,28 @@
 package:
   name: gdal
-  version: 1.10.1
+  version: 1.11.1
 
 source:
-  fn: gdal-1.10.1.tar.gz
-  url: http://download.osgeo.org/gdal/1.10.1/gdal-1.10.1.tar.gz
-  md5: 86b2c71a910d826a7fe6ebb43a532fb7
+  # fn: gdal-1.10.1.tar.gz
+  # url: http://download.osgeo.org/gdal/1.10.1/gdal-1.10.1.tar.gz
+  # md5: 86b2c71a910d826a7fe6ebb43a532fb7
+
+  url: http://download.osgeo.org/gdal/1.11.1/gdal-1.11.1.tar.gz
+  fn: gdal-1.11.1.tar.gz
   patches:
     - relative_data.patch
 
 requirements:
   build:
     - python
+    - numpy
+    - hdf5
+    - libpng
   run:
     - python
-
+    - numpy
+    - hdf5
+    - libpng
 test:
   files:
     - os1_hw.py
