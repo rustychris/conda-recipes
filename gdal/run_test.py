@@ -10,7 +10,7 @@ import osr
 
 cnt = ogr.GetDriverCount()
 for i in xrange(cnt):
-    print ogr.GetDriver(i).GetName()
+    print(ogr.GetDriver(i).GetName())
 
 import os1_hw
 
