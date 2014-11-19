@@ -11,12 +11,11 @@ about:
   license: GPL/LGPL
   summary: robust C++ implementation of geometric algorithms
 build:
-  number: 2
-  string: 2wakari
+  number: 3
+  string: 3
 
-# needs boost - one candidate is
-# conda install -c https://conda.binstar.org/zwelch boost
-# which means zwelch has to be in channels
+# needs boost - the osgeo channel seems like a good one
+# so need to add osgeo to .condarc
 
 requirements:
   # it doesn't really require python, but maybe that will fix
