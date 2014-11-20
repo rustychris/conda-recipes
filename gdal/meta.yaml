@@ -12,9 +12,10 @@ source:
 requirements:
   build:
     - python
+    - proj4
   run:
     - python
-
+    - proj4
 test:
   files:
     - os1_hw.py
