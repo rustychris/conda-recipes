@@ -5,7 +5,8 @@ if [ -n "$OSXARCH" ] ; then
  export LDFLAGS=-headerpad_max_install_names 
 fi
 
-bash configure --with-python --prefix=$PREFIX
+# explicitly tell it to use bash, otherwise there are libtool problems.
+CONFIG_SHELL=/bin/bash bash configure --with-python --prefix=$PREFIX
 make
 make install
 
