@@ -5,16 +5,17 @@ package:
 source:
    git_url: https://code.google.com/r/rustychris-apollonius/ 
 
-   patches:
-     - link_to_gmp.patch
+   # this was necessary with the older code, but perhaps no longer?
+   #patches:
+   #  - link_to_gmp.patch
 
 about:
   home: https://code.google.com/p/cgal-bindings/
   license: Boost Software License
   summary: python bindings for CGAL 
 build:
-  number: 3
-  string: 3
+  number: 4
+  string: 4
 
 requirements:
   build:
