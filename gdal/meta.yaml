@@ -15,14 +15,16 @@ source:
 requirements:
   build:
     - python
-    - numpy
+    - proj4
     - hdf5
     - libpng
+    - numpy
   run:
     - python
-    - numpy
+    - proj4
     - hdf5
     - libpng
+    - numpy
 test:
   files:
     - os1_hw.py
