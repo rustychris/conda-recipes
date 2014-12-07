@@ -9,7 +9,7 @@ diff -rupN Rtree-0.7.0/rtree/core.py Rtree-0.7.0-new/rtree/core.py
 +    try:
 +        rt = ctypes.CDLL(lib_name)
 +    except OSError:
-+        print "Trying local lib dir"
++        # print "Trying local lib dir"
 +        rt = ctypes.CDLL(os.path.join(sys.prefix,'lib',lib_name))
  else:
      raise RTreeError('Unsupported OS "%s"' % os.name)
