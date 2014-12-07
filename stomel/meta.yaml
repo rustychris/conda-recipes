@@ -22,10 +22,10 @@ requirements:
 build:
   number: 2
 
-test:
-  # Python imports
-  imports:
-    - stomel.tom
+# test:
+#   # Python imports
+#   imports:
+#     - stomel.tom
 
 about:
   home: http://toblerity.github.com/rtree/
