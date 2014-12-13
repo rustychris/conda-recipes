@@ -28,7 +28,7 @@ build:
 #     - stomel.tom
 
 about:
-  home: http://toblerity.github.com/rtree/
+  home: http://github.com/rustychris/stomel
   license: GPLv2
   summary: 'Various scripts for ocean modeling including unstructured grid generation'
 
