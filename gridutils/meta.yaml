@@ -1,0 +1,19 @@
+package:
+  name: gridutils
+  version: 0.51
+
+source:
+ svn_url: http://gridutils-c.googlecode.com/svn/gridutils
+
+about:
+  home: https://code.google.com/p/gridutils-c
+  license: MIT License
+  summary: curvilinear orthogonal grid utilities
+build:
+  number: 1
+
+requirements:
+  build:
+   - nn
+   - csa
+#  run:  # assume those are static libraries

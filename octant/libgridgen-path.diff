@@ -1,0 +1,28 @@
+diff -Nurp octant/octant/grid.py octant-rh/octant/grid.py
+--- octant/octant/grid.py	2014-12-11 16:44:05.000000000 -0500
++++ octant-rh/octant/grid.py	2014-12-11 17:11:28.000000000 -0500
+@@ -894,10 +894,20 @@ class Gridgen(CGrid):
+                  focus=None, proj=None, \
+                  nnodes=14, precision=1.0e-12, nppe=3, \
+                  newton=True, thin=True, checksimplepoly=True, verbose=False):
+-        
+-        # self._libgridgen = np.ctypeslib.load_library('libgridgen', '/usr/local/lib')
+-        print octant.__path__[0]
+-        self._libgridgen = np.ctypeslib.load_library('_gridgen', octant.__path__[0])
++
++        libgridgen_paths=[ ('_gridgen',octant.__path__[0]),
++                           ('libgridgen',os.path.join(sys.prefix,'lib')),
++                           ('libgridgen','/usr/local/lib') ]
++        for name,path in libgridgen_paths:
++            try:
++                self._libgridgen = np.ctypeslib.load_library(name,path)
++                break
++            except OSError:
++                pass
++        else:
++            print "libgridgen: attempted names/locations"
++            print libgridgen_paths
++            raise OSError('Failed to load libgridgen.')
+         
+         self._libgridgen.gridgen_generategrid2.restype = ctypes.c_void_p
+         self._libgridgen.gridnodes_getx.restype = ctypes.POINTER(ctypes.POINTER(ctypes.c_double))

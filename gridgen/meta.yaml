@@ -1,0 +1,18 @@
+package:
+  name: gridgen-c
+  version: 1.0
+
+source:
+ svn_url: http://gridgen-c.googlecode.com/svn/gridgen
+
+about:
+  home: https://code.google.com/p/gridgen-c
+  license: MIT License
+  summary: curvilinear orthogonal grid generation
+build:
+  number: 1
+
+requirements:
+  build:
+   - gridutils
+#  run: 

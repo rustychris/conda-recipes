@@ -1,0 +1,14 @@
+package:
+  name: csa
+  version: 1.22
+
+source:
+ svn_url: http://csa-c.googlecode.com/svn/csa
+
+about:
+  home: https://code.google.com/p/csa-c
+  license: MIT License
+  summary: cubic spline approximation
+build:
+  number: 1
+

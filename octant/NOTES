@@ -1,0 +1,14 @@
+ - octant/cf.py tries to import netcdftime??
+
+It's expecting gridgen to be installed in the same directory as the
+python source - need to patch to look in prefix/lib also.
+
+Now it finds the library, but fails to get the right symbols:
+
+AttributeError: /home/rusty/anaconda/envs/test_octant/lib/libgridgen.so: undefined symbol: gridgen_generategrid2
+  There is a gridgen_generategrid, but not with the '2' suffix.
+
+This exists in the gridgen.c included with octant, prefixed by 
+#if !defined (GRIDGEN_STANDALONE) && defined(HAVE_GRIDNODES_H)
+
+Is it in the google code version? yes.  so maybe one part of that CPP directive is failing.
