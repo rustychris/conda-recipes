@@ -9,6 +9,9 @@ about:
   home: http://www.mpfr.org/
   license: GPL
   summary: GNU mpfr
+build:
+  number: 2 
+  string: 2wakari
 
 requirements:
   # python is a fake requirement, to workaround a missing bin directory

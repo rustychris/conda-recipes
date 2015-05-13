@@ -1,0 +1,39 @@
+package:
+  name: octant
+  # go with HEAD, which is a few commits newer than 0.7.0
+  # so make up a version...
+  version: 0.7.01
+
+source:
+  git_url: https://github.com/hetland/octant.git
+
+  patches:
+   - libgridgen-path.diff
+
+requirements:
+  build:
+    - python=2.7
+    - numpy
+    - matplotlib
+    - gridgen-c
+    - setuptools
+    - csa
+    - nn
+    - netCDF4
+  run:
+    - python
+    - numpy
+    - scipy
+    - matplotlib
+    - basemap
+    - gridgen-c
+    - netCDF4
+
+build:
+  number: 1
+
+about:
+  home: http://github.com/hetland/octant
+  license: NA
+  summary: 'Various scripts for ocean modeling including unstructured grid generation'
+

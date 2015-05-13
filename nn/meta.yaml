@@ -1,0 +1,17 @@
+package:
+  name: nn
+  version: 1.85
+
+source:
+ svn_url: http://nn-c.googlecode.com/svn/nn
+
+about:
+  home: https://code.google.com/p/nn-c
+  license: MIT License
+  summary: curvilinear orthogonal grid utilities
+build:
+  number: 1
+
+#requirements:
+#  build:
+#  run: 
