@@ -8,8 +8,8 @@ if [ -n "${OSX_ARCH}${OSXARCH}" ] ; then
 fi
 
 # explicitly tell it to use bash, otherwise there are libtool problems.
-# trying the static proj.4
-CONFIG_SHELL=/bin/bash bash configure --with-python --prefix=$PREFIX --with-static-proj4
+# trying the static proj.4 - that doesn't work now with 1.11.2
+CONFIG_SHELL=/bin/bash bash configure --with-python --prefix=$PREFIX --with-libtiff=internal 
 make 
 make install
 
