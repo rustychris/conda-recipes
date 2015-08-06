@@ -12,3 +12,44 @@ This exists in the gridgen.c included with octant, prefixed by
 #if !defined (GRIDGEN_STANDALONE) && defined(HAVE_GRIDNODES_H)
 
 Is it in the google code version? yes.  so maybe one part of that CPP directive is failing.
+ - was a lazy configure script.  Added some env. vars, should be working now
+
+Patch is failing now... manually stripped the first directory - fixed.
+
+Now it fails when building _iso.so
+ looks like it's missing -lpython, and _main().
+ Maybe actually gfortran is missing the argument to tell it that this is a shared lib?
+  - adding -lpython -shared near the end allows this step to complete..
+
+ But when I do it by hand, it seems to work??
+
+From a bash within build.sh - FAILS
+bash-3.2$ export
+# declare -x LDFLAGS="-arch x86_64"
+
+# unsetting LDFLAGS allowed it to work, and the script instead adds "-undefined dynamic_lookup"
+
+# this is all coming from setup.py
+
+Appears this is specific to OSX
+
+ - the code to add this in is numpy/distutils/fcompiler/gnu.py, line 105
+   but it's NOT getting called.  Not sure that anything there is getting called.
+
+ - kludge fix here by tossing out conda's LDFLAGS, so that numpy distutils will use
+   its own.
+
+ - still fails to load the library...
+   because libgridgen.so wants something called libgu.so
+   part of libgridutils.  Okay - put that extra dependency in, but
+   still failing.
+
+   conda-build identifies libgridgen.so as a dylib...
+
+   conda-build says "number of files: 0" - so doesn't even try to fix them up.
+
+   oops - bug in build.sh wasn't installing to $PREFIX.  
+
+Well, after all that, it segfaulted.
+
+

@@ -1,0 +1,5 @@
+ - should probably add ipython ipython-notebook to list of packages to install in
+   the notebook. This will help make sure it grabs the right ipython when someone
+   starts the server.
+
+ipython is finding the wrong python version!

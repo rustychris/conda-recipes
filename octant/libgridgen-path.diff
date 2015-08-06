@@ -1,6 +1,6 @@
 diff -Nurp octant/octant/grid.py octant-rh/octant/grid.py
---- octant/octant/grid.py	2014-12-11 16:44:05.000000000 -0500
-+++ octant-rh/octant/grid.py	2014-12-11 17:11:28.000000000 -0500
+--- octant/grid.py	2014-12-11 16:44:05.000000000 -0500
++++ octant/grid.py	2014-12-11 17:11:28.000000000 -0500
 @@ -894,10 +894,20 @@ class Gridgen(CGrid):
                   focus=None, proj=None, \
                   nnodes=14, precision=1.0e-12, nppe=3, \

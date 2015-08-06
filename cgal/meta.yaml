@@ -11,23 +11,23 @@ about:
   license: GPL/LGPL
   summary: robust C++ implementation of geometric algorithms
 build:
-  number: 3
-  string: 3
+  number: 4
+  string: 4
 
-# needs boost - the osgeo channel seems like a good one
-# so need to add osgeo to .condarc
+# needs boost - this is now in defaults.  the ioos boost is broken (and has been
+# deprecated but still appears in the channel - 2015-08-02)
 
 requirements:
   # it doesn't really require python, but maybe that will fix
   # the missing bin directory
   build:
-   - boost
+   - boost 1.57.0
    - python
    - cmake 2.8.9
    - mpfr
    - gmp
   run:
-   - boost
+   - boost 1.57.0
    - gmp
    - mpfr
 

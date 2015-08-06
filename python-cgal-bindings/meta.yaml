@@ -14,12 +14,12 @@ about:
   license: Boost Software License
   summary: python bindings for CGAL 
 build:
-  number: 4
-  string: 4
+  number: 5
+  string: 5
 
 requirements:
   build:
-   - cgal
+   - cgal 4.3.0
    - python
    - swig
    - mpfr
@@ -27,7 +27,7 @@ requirements:
    - patch
    - cmake
   run:
-   - cgal
+   - cgal 4.3.0
    - python
    - mpfr
    - gmp

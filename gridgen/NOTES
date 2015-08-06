@@ -1,1 +1,10 @@
 configure says it need gridnodes.h
+
+Gridnodes is complaining about mismatch between GRIDNODES_H and _GRIDNODES_H
+
+configure fails to find gridnodes.h
+ - it *is* installed to PREFIX/include
+
+adding that to CFLAGS helps with "gridnodes.h usability" but is ignored for
+gridnodes.h presence.
+

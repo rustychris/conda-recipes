@@ -12,14 +12,14 @@ source:
 
 requirements:
   build:
-    - python=2.7
+    - python
     - numpy
     - matplotlib
     - gridgen-c
     - setuptools
     - csa
     - nn
-    - netCDF4
+    - netcdf4
   run:
     - python
     - numpy
@@ -27,7 +27,7 @@ requirements:
     - matplotlib
     - basemap
     - gridgen-c
-    - netCDF4
+    - netcdf4
 
 build:
   number: 1

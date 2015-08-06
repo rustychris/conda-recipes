@@ -1,0 +1,259 @@
+python-cgal-bindings:
+  lib/python2.7/site-packages/CGAL/_CGAL_Triangulation_2.so
+
+cannot open 
+  /Users/rusty/anaconda/conda-bld/work/lib/libCGAL_Kernel_cpp.dylib
+
+because it exists in
+  /Users/rusty/anaconda/envs/tom_test/lib
+
+oddly, other CGAL libraries are handled:
+  @loader_path/../../../libCGAL_ImageIO.10.dylib (compatibility version 10.0.0, current version 10.0.3)
+
+So what is different about the *_cpp.dylib libraries?
+ - they are compiled as part of the python extension, while libCGAL_ImageIO.10.dylib is part of
+   CGAL.
+
+
+Manually using install_name_tool -change old new  
+appears to work fine.
+
+
+The build log from the console:
+
+the install_name_tool part for _CGAL_Triangulation_2.so:
+
+install_name_tool -change libmpfr.4.dylib @loader_path/../../../libmpfr.4.dylib /Users/rusty/anaconda/envs/_build/lib/python2.7/site-packages/CGAL/_CGAL_Triangulation_2.so
+install_name_tool -change libgmp.10.dylib @loader_path/../../../libgmp.10.dylib /Users/rusty/anaconda/envs/_build/lib/python2.7/site-packages/CGAL/_CGAL_Triangulation_2.so
+install_name_tool -change libCGAL_ImageIO.10.dylib @loader_path/../../../libCGAL_ImageIO.10.dylib /Users/rusty/anaconda/envs/_build/lib/python2.7/site-packages/CGAL/_CGAL_Triangulation_2.so
+install_name_tool -change libCGAL.10.dylib @loader_path/../../../libCGAL.10.dylib /Users/rusty/anaconda/envs/_build/lib/python2.7/site-packages/CGAL/_CGAL_Triangulation_2.so
+install_name_tool -change libboost_thread.dylib @loader_path/../../../libboost_thread.dylib /Users/rusty/anaconda/envs/_build/lib/python2.7/site-packages/CGAL/_CGAL_Triangulation_2.so
+install_name_tool -change libboost_system.dylib @loader_path/../../../libboost_system.dylib /Users/rusty/anaconda/envs/_build/lib/python2.7/site-packages/CGAL/_CGAL_Triangulation_2.so
+install_name_tool -change libz.1.dylib @loader_path/../../../libz.1.dylib /Users/rusty/anaconda/envs/_build/lib/python2.7/site-packages/CGAL/_CGAL_Triangulation_2.so
+
+
+
+So it doesn't even try to change the *_cpp.dylib paths.
+
+Relevant conda-build code is in .../lib/python2.7/conda_build/macho.py, 
+def install_name_changes(path,cb_func)
+ - but this delegates the relinking decision to the cb_func passed in.
+ - that comes from post.py: mk_relative_osx()
+ - the assertions near the end could possibly fail if there is a relative/absolute mismatch.
+
+
+The checks at the end of mk_relative_osx(path) includes these:
+ [RH] compare libCGAL_Triangulation_2_cpp.dylib and /Users/rusty/anaconda/envs/_build
+ [RH] compare /Users/rusty/anaconda/conda-bld/work/lib/libCGAL_Kernel_cpp.dylib and /Users/rusty/anaconda/envs/_build
+
+but the paths don't reference the environment - they reference the _build_tree_
+
+/Users/rusty/anaconda/envs/_build/lib/libCGAL_Triangulation_2_cpp.dylib
+
+build_prefix is presumably /Users/rusty/anaconda/envs/_build
+
+The install_name_tool stuff happens *after* files have been "installed" into 
+the build environment.
+  
+osx_ch_link(path,link):
+  # path is the target library to modify
+  # link is from otool, such as 
+  # /Users/rusty/anaconda/conda-bld/work/lib/libCGAL_Kernel_cpp.dylib   
+  # libCGAL_Triangulation_2_cpp.dylib
+  # note that otool -L shows the library being used - so if it finds the lib in
+  #  the local directory, that's what it will show.
+
+  # strips the build_prefix portion of the path of the library
+  reldir = utils.rel_lib(path[len(build_prefix) + 1:])
+
+  # these are where the test is probably failing:
+  # 
+  if link.startswith((build_prefix + '/lib', 'lib', '@executable_path/')):
+      return '@loader_path/%s/%s' % (reldir, basename(link))
+
+
+--------------------------------------------------------------------------------
+
+Updated conda-build a number of versions - doesn't appear to change the behavior.
+
+rehash:
+
+macho.otool(path) =>
+
+$ otool -L /Users/rusty/anaconda/envs/_build/lib/python2.7/site-packages/CGAL/_CGAL_Triangulation_2.so 
+
+/Users/rusty/anaconda/envs/_build/lib/python2.7/site-packages/CGAL/_CGAL_Triangulation_2.so:
+	@loader_path/../../../libmpfr.4.dylib (compatibility version 6.0.0, current version 6.2.0)
+	@loader_path/../../../libgmp.10.dylib (compatibility version 12.0.0, current version 12.2.0)
+	@loader_path/../../../libCGAL_ImageIO.10.dylib (compatibility version 10.0.0, current version 10.0.3)
+	@loader_path/../../../libCGAL.10.dylib (compatibility version 10.0.0, current version 10.0.3)
+	@loader_path/../../../libboost_thread.dylib (compatibility version 0.0.0, current version 0.0.0)
+	@loader_path/../../../libboost_system.dylib (compatibility version 0.0.0, current version 0.0.0)
+	@loader_path/../../../libz.1.dylib (compatibility version 1.0.0, current version 1.2.7)
+	/Users/rusty/anaconda/conda-bld/work/lib/libCGAL_Kernel_cpp.dylib (compatibility version 0.0.0, current version 0.0.0)
+	/Users/rusty/anaconda/conda-bld/work/lib/libCGAL_Triangulation_2_cpp.dylib (compatibility version 0.0.0, current version 0.0.0)
+
+To see the actual load commands rather than the resulting path it found, otool -l => 
+
+Load command 10
+          cmd LC_LOAD_DYLIB
+      cmdsize 64
+         name @loader_path/../../../libCGAL.10.dylib (offset 24)
+   time stamp 2 Wed Dec 31 19:00:02 1969
+      current version 10.0.3
+compatibility version 10.0.0
+...
+Load command 16
+          cmd LC_LOAD_DYLIB
+      cmdsize 96
+         name /Users/rusty/anaconda/conda-bld/work/lib/libCGAL_Kernel_cpp.dylib (offset 24)
+   time stamp 2 Wed Dec 31 19:00:02 1969
+      current version 0.0.0
+compatibility version 0.0.0
+Load command 17
+          cmd LC_LOAD_DYLIB
+      cmdsize 104
+         name /Users/rusty/anaconda/conda-bld/work/lib/libCGAL_Triangulation_2_cpp.dylib (offset 24)
+   time stamp 2 Wed Dec 31 19:00:02 1969
+      current version 0.0.0
+compatibility version 0.0.0
+
+
+So the offending links do include the whole path, going into the working directory.
+It's confusing how this would ever work -- and it appears that my most recent OSX
+builds did not work.
+
+
+
+
+Options to remedy:
+ - fix the build process - why does it include the working directory when linking?
+   not sure if this is a SWIG problem, or what.
+   Maybe the problem is that I'm manually installing?
+   There doesn't appear to be a make install
+
+  This patch adds installation rules:
+    https://code.google.com/r/medionilaura-cgal-bindings/source/detail?r=1c469653776bc34acb4de1ef7886e61a710a276c
+
+  Might be worth updating to newer branch of bindings
+
+ - modify build.sh to point the offending links to the build env lib directory
+   (which conda will then patch up again to use @loader_path)
+
+   run otool -L, find instances of <working_dir>/lib, map to 
+
+
+ - alter osx_ch_link to test for shared libraries residing in the working directory
+ - see if conda-build has a way to specify extra places to change paths
+
+
+Interesting build message - sounds related!
+
+  MACOSX_RPATH is not specified for the following targets:
+
+   CGAL_AABB_tree_cpp
+   CGAL_Alpha_shape_2_cpp
+   CGAL_Apollonius_Graph_2_cpp
+   CGAL_Kernel_cpp
+   CGAL_Mesh_3_cpp
+   CGAL_Surface_mesher_cpp
+   CGAL_Triangulation_2_cpp
+   CGAL_Triangulation_3_cpp
+
+and libXXX.dylib is the kind of path that fails
+
+2015-08-02: still have this problem.
+ Update conda, conda-build, try a fresh rebuild of python-cgal-bindings
+ updated cgal, but it was already at 4.3.0
+
+
+conda-build versions:
+ The following NEW packages will be INSTALLED:
+ 
+     boost:      1.58.0-0     
+     cgal:       4.3.0-3      
+     cmake:      3.2.3-0      
+     gmp:        5.1.2-6      
+     mpfr:       3.1.2-0      
+     openssl:    1.0.1k-1     
+     patch:      2.7.1-0      
+     pcre:       8.31-0       
+     pip:        7.1.0-py27_0 
+     python:     2.7.10-0     
+     readline:   6.2-2        
+     setuptools: 18.0.1-py27_0
+     sqlite:     3.8.4.1-1    
+     swig:       3.0.2-0      
+     tk:         8.5.18-0     
+     zlib:       1.2.8-0      
+ 
+
+Changed that to use boost 1.57, to get the defaults channel version.
+
+Compiled, installed, and uploaded to binstar:
+
+ binstar upload /Users/rusty/anaconda/conda-bld/osx-64/cgal-4.3.0-4.tar.bz2
+
+Changed python-cgal-bindings recipe to specify the version *and* build number:
+ 4.3.0-4
+
+
+Still gives the build message:
+
+  -- Configuring done
+  CMake Warning (dev):
+    Policy CMP0042 is not set: MACOSX_RPATH is enabled by default.  Run "cmake
+    --help-policy CMP0042" for policy details.  Use the cmake_policy command to
+    set the policy and suppress this warning.
+  
+    MACOSX_RPATH is not specified for the following targets:
+  
+     CGAL_AABB_tree_cpp
+     CGAL_Alpha_shape_2_cpp
+     CGAL_Apollonius_Graph_2_cpp
+     CGAL_Kernel_cpp
+     CGAL_Mesh_3_cpp
+     CGAL_Surface_mesher_cpp
+     CGAL_Triangulation_2_cpp
+     CGAL_Triangulation_3_cpp
+  
+  This warning is for project developers.  Use -Wno-dev to suppress it.
+
+Trying to install the package, even with --no-deps, doesn't deal well
+with having the build number as part of the requirements.
+
+Rebuilding python-cgal-bindings without specifying the build number.
+
+At the end of conda-build:
+
+   Ignored hard-coded path in lib/libCGAL_AABB_tree_cpp.dylib
+   Ignored hard-coded path in lib/libCGAL_Alpha_shape_2_cpp.dylib
+   Ignored hard-coded path in lib/libCGAL_Apollonius_Graph_2_cpp.dylib
+   Ignored hard-coded path in lib/libCGAL_Kernel_cpp.dylib
+   Ignored hard-coded path in lib/libCGAL_Mesh_3_cpp.dylib
+   Ignored hard-coded path in lib/libCGAL_Surface_mesher_cpp.dylib
+   Ignored hard-coded path in lib/libCGAL_Triangulation_2_cpp.dylib
+   Ignored hard-coded path in lib/libCGAL_Triangulation_3_cpp.dylib
+   Ignored hard-coded path in lib/python2.7/site-packages/CGAL/_CGAL_AABB_tree.so
+   Ignored hard-coded path in lib/python2.7/site-packages/CGAL/_CGAL_Alpha_shape_2.so
+   Ignored hard-coded path in lib/python2.7/site-packages/CGAL/_CGAL_Apollonius_Graph_2.so
+   Ignored hard-coded path in lib/python2.7/site-packages/CGAL/_CGAL_Box_intersection_d.so
+   Ignored hard-coded path in lib/python2.7/site-packages/CGAL/_CGAL_Convex_hull_2.so
+   Ignored hard-coded path in lib/python2.7/site-packages/CGAL/_CGAL_HalfedgeDS.so
+   Ignored hard-coded path in lib/python2.7/site-packages/CGAL/_CGAL_Interpolation.so
+   Ignored hard-coded path in lib/python2.7/site-packages/CGAL/_CGAL_Kernel.so
+   Ignored hard-coded path in lib/python2.7/site-packages/CGAL/_CGAL_Mesh_2.so
+   Ignored hard-coded path in lib/python2.7/site-packages/CGAL/_CGAL_Mesh_3.so
+   Ignored hard-coded path in lib/python2.7/site-packages/CGAL/_CGAL_Point_set_processing_3.so
+   Ignored hard-coded path in lib/python2.7/site-packages/CGAL/_CGAL_Polyhedron_3.so
+   Ignored hard-coded path in lib/python2.7/site-packages/CGAL/_CGAL_Spatial_searching.so
+   Ignored hard-coded path in lib/python2.7/site-packages/CGAL/_CGAL_Surface_mesher.so
+   Ignored hard-coded path in lib/python2.7/site-packages/CGAL/_CGAL_Triangulation_2.so
+   Ignored hard-coded path in lib/python2.7/site-packages/CGAL/_CGAL_Triangulation_3.so
+   Ignored hard-coded path in lib/python2.7/site-packages/CGAL/_CGAL_Voronoi_diagram_2.so
+
+Why?
+
+Well, it's also crashing now - looks like a library mismatch.  Figure out which one?
+
+Seems to be crashing with CGAL.  but why?

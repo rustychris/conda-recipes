@@ -1,0 +1,297 @@
+(cd port; /Applications/Xcode.app/Contents/Developer/usr/bin/make)
+make[1]: Nothing to be done for `default'.
+(cd gcore; /Applications/Xcode.app/Contents/Developer/usr/bin/make)
+make[1]: Nothing to be done for `default'.
+(cd alg; /Applications/Xcode.app/Contents/Developer/usr/bin/make)
+make[1]: Nothing to be done for `default'.
+(cd frmts; /Applications/Xcode.app/Contents/Developer/usr/bin/make)
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C gxf install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C gtiff install-obj
+(cd libgeotiff; /Applications/Xcode.app/Contents/Developer/usr/bin/make install-obj)
+make[3]: Nothing to be done for `install-obj'.
+(cd libtiff; /Applications/Xcode.app/Contents/Developer/usr/bin/make install-obj)
+make[3]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C hfa install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C aigrid install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C aaigrid install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ceos install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ceos2 install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C iso8211 install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C xpm install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C sdts install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C raw install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C dted install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C mem install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C jdem install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C envisat install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C elas install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C fit install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C vrt install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C usgsdem install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C l1b install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C nitf install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C bmp install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C pcidsk install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C airsar install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C rs2 install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ilwis install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C rmf install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C leveller install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C sgi install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C srtmhgt install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C idrisi install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C gsg install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ingr install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ers install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C jaxapalsar install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C dimap install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C gff install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C cosar install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C pds install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C adrg install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C coasp install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C tsx install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C terragen install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C blx install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C msgn install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C til install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C r install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C northwood install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C saga install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C xyz install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C hf2 install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C kmlsuperoverlay install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ctg install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C e00grid install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C zmap install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ngsgeoid install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C iris install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C map install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C wcs install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C wms install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C grib install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C bsb install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C netcdf install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C hdf5 install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C gif install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C jpeg install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C png install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C pcraster install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C rik install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ozi install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C pdf install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C rasterlite install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C mbtiles install-obj
+make[2]: Nothing to be done for `install-obj'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C arg install-obj
+make[2]: Nothing to be done for `install-obj'.
+(cd ogr; /Applications/Xcode.app/Contents/Developer/usr/bin/make lib )
+(cd ogrsf_frmts; /Applications/Xcode.app/Contents/Developer/usr/bin/make)
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C generic
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C avc
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C bna
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C csv
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C dgn
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C geojson
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C jsonc
+make[4]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C gml
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C gmt
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C mem
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C kml
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C mitab
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ntf
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C gpx
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C rec
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C s57
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C sdts
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C shape
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C tiger
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C vrt
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C geoconcept
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C xplane
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C georss
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C gtm
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C dxf
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C pgdump
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C gpsbabel
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C sua
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C openair
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C pds
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C htf
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C aeronavfaa
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C edigeo
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C svg
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C idrisi
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C arcgen
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C segukooa
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C segy
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C sqlite
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C vfk
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C wfs
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C gft
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C couchdb
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ods
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C xlsx
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C elastic
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C osm
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C pcidsk
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C pdf
+make[3]: Nothing to be done for `default'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make libgdal.la
+make[1]: `libgdal.la' is up to date.
+(cd apps; /Applications/Xcode.app/Contents/Developer/usr/bin/make)
+make[1]: Nothing to be done for `default'.
+(cd swig; /Applications/Xcode.app/Contents/Developer/usr/bin/make build)
+for dir in python ; do (cd $dir; /Applications/Xcode.app/Contents/Developer/usr/bin/make build) || exit; done
+make[2]: `build' is up to date.
+/Users/rusty/anaconda/conda-bld/work/gdal-1.10.1/install-sh -d /Users/rusty/anaconda/envs/_build/lib
+for f in libgdal.la ; do /bin/sh /Users/rusty/anaconda/conda-bld/work/gdal-1.10.1/libtool --mode=install  /Users/rusty/anaconda/conda-bld/work/gdal-1.10.1/install-sh -c $f /Users/rusty/anaconda/envs/_build/lib ; done
+/Users/rusty/anaconda/conda-bld/work/gdal-1.10.1/install-sh -d /Users/rusty/anaconda/envs/_build/lib/gdalplugins
+/Users/rusty/anaconda/conda-bld/work/gdal-1.10.1/install-sh -d /Users/rusty/anaconda/envs/_build/bin
+/Users/rusty/anaconda/conda-bld/work/gdal-1.10.1/install-sh -d /Users/rusty/anaconda/envs/_build/share/gdal
+/Users/rusty/anaconda/conda-bld/work/gdal-1.10.1/install-sh -d /Users/rusty/anaconda/envs/_build/include
+(cd port; /Applications/Xcode.app/Contents/Developer/usr/bin/make install)
+for f in *.h ; do /Users/rusty/anaconda/conda-bld/work/gdal-1.10.1/install-sh -c -m 0644 $f /Users/rusty/anaconda/envs/_build/include ; done
+(cd gcore; /Applications/Xcode.app/Contents/Developer/usr/bin/make install)
+for f in *.h ; do /Users/rusty/anaconda/conda-bld/work/gdal-1.10.1/install-sh -c -m 0644 $f /Users/rusty/anaconda/envs/_build/include ; done
+(cd frmts; /Applications/Xcode.app/Contents/Developer/usr/bin/make install)
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C vrt install
+/Users/rusty/anaconda/conda-bld/work/gdal-1.10.1/install-sh -c -m 0644 vrtdataset.h /Users/rusty/anaconda/envs/_build/include
+/Users/rusty/anaconda/conda-bld/work/gdal-1.10.1/install-sh -c -m 0644 gdal_vrt.h /Users/rusty/anaconda/envs/_build/include
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C mem install
+/Users/rusty/anaconda/conda-bld/work/gdal-1.10.1/install-sh -c -m 0644 memdataset.h /Users/rusty/anaconda/envs/_build/include
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C raw install
+/Users/rusty/anaconda/conda-bld/work/gdal-1.10.1/install-sh -c -m 0644 rawdataset.h /Users/rusty/anaconda/envs/_build/include
+(cd alg; /Applications/Xcode.app/Contents/Developer/usr/bin/make install)
+for f in *.h ; do /Users/rusty/anaconda/conda-bld/work/gdal-1.10.1/install-sh -c -m 0644 $f /Users/rusty/anaconda/envs/_build/include ; done
+(cd ogr; /Applications/Xcode.app/Contents/Developer/usr/bin/make install)
+for f in ogr_core.h ogr_feature.h ogr_geometry.h ogr_p.h ogr_spatialref.h ogr_srs_api.h ogrsf_frmts/ogrsf_frmts.h ogr_featurestyle.h ogr_api.h ogr_geocoding.h ; \
+	    do /Users/rusty/anaconda/conda-bld/work/gdal-1.10.1/install-sh -c -m 0644 $f /Users/rusty/anaconda/envs/_build/include ; \
+	done
+(cd apps; /Applications/Xcode.app/Contents/Developer/usr/bin/make install)
+for f in gdalinfo gdalserver gdal_translate gdaladdo gdalwarp nearblack gdalmanage gdalenhance gdaltransform gdaldem gdallocationinfo gdalsrsinfo  gdal_contour gdaltindex gdal_rasterize gdal_grid ogrinfo ogr2ogr ogrtindex testepsg gdalbuildvrt ; do /bin/sh /Users/rusty/anaconda/conda-bld/work/gdal-1.10.1/libtool --mode=install  /Users/rusty/anaconda/conda-bld/work/gdal-1.10.1/install-sh -c $f /Users/rusty/anaconda/envs/_build/bin ; done
+/bin/sh /Users/rusty/anaconda/conda-bld/work/gdal-1.10.1/libtool --mode=install  /Users/rusty/anaconda/conda-bld/work/gdal-1.10.1/install-sh -c gdal-config-inst /Users/rusty/anaconda/envs/_build/bin/gdal-config
+(cd swig; /Applications/Xcode.app/Contents/Developer/usr/bin/make install)
+for dir in python ; do (cd $dir; /Applications/Xcode.app/Contents/Developer/usr/bin/make install) || exit; done
+/Users/rusty/anaconda/envs/_build/bin/python setup.py install --prefix=/Users/rusty/anaconda/envs/_build
+for f in `ls ./scripts` ; do /bin/sh /Users/rusty/anaconda/conda-bld/work/gdal-1.10.1/libtool --mode=install  /Users/rusty/anaconda/conda-bld/work/gdal-1.10.1/install-sh -c ./scripts/$f /Users/rusty/anaconda/envs/_build/bin ; done
+for f in LICENSE.TXT data/*.* ; do /Users/rusty/anaconda/conda-bld/work/gdal-1.10.1/install-sh -c -m 0644 $f /Users/rusty/anaconda/envs/_build/share/gdal ; done
+/bin/sh /Users/rusty/anaconda/conda-bld/work/gdal-1.10.1/libtool --mode=finish --silent /Users/rusty/anaconda/envs/_build/lib
