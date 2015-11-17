@@ -1,0 +1,23 @@
+package:
+  name: pyspatialite   
+  version: "3.0.1"    # source version
+build:
+  number: 0
+source:
+   git_url: https://github.com/lokkju/pyspatialite.git
+   patches:
+     - missing-comma.patch
+about:
+  home: https://github.com/lokkju/pyspatialite
+  license: uknown
+  summary: python access to sqlite / spatialite
+requirements:
+  build: 
+    - python
+    - proj4
+    - geos
+  run:
+    - python
+    - proj4
+    - geos
+
