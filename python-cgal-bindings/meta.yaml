@@ -3,7 +3,7 @@ package:
   version: "0.1"    # source version
 
 source:
-   git_url: https://code.google.com/r/rustychris-apollonius/ 
+   git_url: https://github.com/rustychris/rustychris-apollonius
 
    # this was necessary with the older code, but perhaps no longer?
    #patches:
